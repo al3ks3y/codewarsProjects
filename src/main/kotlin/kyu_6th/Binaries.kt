@@ -8,12 +8,12 @@ class Binaries {
             }
             val result = mutableListOf<Char>()
             str.toCharArray().forEach { digit ->
-                val binary = Integer.toBinaryString(digit.toInt())
+                val binary = Character.getNumericValue(digit).toString(2)
                 repeat(binary.length - 1) {
                     result.add('0')
                 }
                 result.add('1')
-                result.addAll(digit.toInt().toString(2).toCharArray().asList())
+                result.addAll(Character.getNumericValue(digit).toString(2).toCharArray().asList())
             }
             return result.joinToString().replace(", ", "")
         }
@@ -28,21 +28,6 @@ class Binaries {
                 start = 2 * i - start + 2
             }
             return result.joinToString().replace(", ", "")
-        }
-
-        fun convertBinaryToDecimal(num: Int): Int {
-            var num = num
-            var decimalNumber = 0
-            var i = 0
-            var remainder: Int
-
-            while (num.toInt() != 0) {
-                remainder = num % 10
-                num /= 10
-                decimalNumber += (remainder * Math.pow(2.0, i.toDouble())).toInt()
-                ++i
-            }
-            return decimalNumber
         }
 
         @JvmStatic
