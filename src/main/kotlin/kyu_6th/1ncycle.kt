@@ -10,8 +10,9 @@ class `1ncycle` {
             repeat(2) { charArray.removeAt(0) }
 
             for ((i, c) in charArray.withIndex()) {
-                if (i >= 2 && 3 * i - 2 < charArray.size &&
+                if (i >= 2 && 2 * i - 2 < charArray.size &&
                     !devided.substring(2, i).equals("") &&
+                    !devided.substring(2, i).equals("0") &&
                     devided.substring(2, i).equals(devided.substring(i, i + devided.substring(2, i).length))
                     && devided.substring(2, i).equals(
                         devided.substring(
@@ -19,14 +20,14 @@ class `1ncycle` {
                             i + 2 * (devided.substring(2, i).length)
                         )
                     )
-                    && devided.substring(2, i).equals(
-                        devided.substring(
-                            devided.length - devided.substring(2, i).length - 1,
-                            devided.length - 1
-                        )
-                    )
+//                    && devided.substring(2, i).equals(
+//                        devided.substring(
+//                            devided.length - devided.substring(2, i).length - 1,
+//                            devided.length - 1
+//                        )
+//                    )
                 ) {
-                    println(devided.substring(2, i))
+                    //println(devided.substring(1+n.toString().length, i))
                     return devided.substring(2, i).length
                 }
             }
@@ -35,7 +36,7 @@ class `1ncycle` {
 
         @JvmStatic
         fun main(args: Array<String>) {
-            println(cycle(33))
+            println(cycle(18812))
         }
     }
 }
