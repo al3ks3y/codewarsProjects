@@ -8,7 +8,6 @@ class RgbToHexConversion {
         fun rgb(r: Int, g: Int, b: Int): String {
             return toHex(r) + toHex(g) + toHex(b)
         }
-
         fun toHex(num: Int): String {
             if (num < 0) return "00"
             if (num > 255) return "FF"
