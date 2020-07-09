@@ -11,7 +11,7 @@ class theLoop {
 
 
     fun loopSize(n: Node): Int {
-        Node.next
+        Node
         return 0 // do it!
     }
 }
